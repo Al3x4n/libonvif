@@ -98,7 +98,7 @@ void Discovery::discover()
         strcpy(onvif_session->preferred_network_address, buffer);
         std::cout << "onvif_session->preferred_network_address: " << onvif_session->preferred_network_address << std::endl;
         /**/
-
+        onvif_session->discovery_msg_id = 2;
         int number_of_cameras = broadcast(onvif_session);
         str.append(QString("libonvif found %1 cameras\n").arg(QString::number(number_of_cameras)));
         emit msg(str);

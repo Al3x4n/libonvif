@@ -587,11 +587,12 @@ int getVideoEncoderConfigurationOptions(struct OnvifData *onvif_data) {
                     strcpy(onvif_data->resolutions_buf[size], tmp);
                     k++;
                 }
-
+                //@DUCLS comment
                 if (width != NULL)
                     free(width);
                 if (height != NULL)
                     free(height);
+                //@DUCLS comment end
             }
             xmlXPathFreeObject(xml_result);
         }
@@ -1755,6 +1756,7 @@ int getXmlValue(xmlDocPtr doc, xmlChar *xpath, char buf[], int buf_length) {
     }
 
     xmlXPathFreeObject(result);
+    //@DUCLS comment
     if (keyword != NULL)
         free(keyword);
     return 0;
@@ -1805,6 +1807,7 @@ int getNodeAttributen (xmlDocPtr doc, xmlChar *xpath, xmlChar *attribute, char b
     }
 
     xmlXPathFreeObject(result);
+    //@DUCLS COMMENT
     if (keyword != NULL)
         free(keyword);
     return 0;

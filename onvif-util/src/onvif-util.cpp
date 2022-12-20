@@ -59,17 +59,19 @@ static void showAll()
 	struct OnvifSession *onvif_session = (struct OnvifSession*)calloc(sizeof(struct OnvifSession), 1);
     struct OnvifData *onvif_data = (struct OnvifData*)malloc(sizeof(struct OnvifData));
 	initializeSession(onvif_session);
+    onvif_session->discovery_msg_id = 2;
 	int n = broadcast(onvif_session);
-	std::cout << "Found " << n << " cameras" << std::endl;
-	for (int i = 0; i < n; i++) {
-		prepareOnvifData(i, onvif_session, onvif_data);
-		char host[128];
-		extractHost(onvif_data->xaddrs, host);
-		getHostname(onvif_data);
-		printf("%s %s(%s)\n",host,
-			onvif_data->host_name,
-			onvif_data->camera_name);
-	}
+    std::cout << "showAll Found " << n << " cameras" << std::endl;
+    for (int i = 0; i < n; i++) {
+        std::cout << "get cam " << i << " in " << n << " cameras" << std::endl;
+        prepareOnvifData(i, onvif_session, onvif_data);
+        char host[128];
+        extractHost(onvif_data->xaddrs, host);
+        getHostname(onvif_data);
+        printf("%s %s(%s)\n",host,
+            onvif_data->host_name,
+            onvif_data->camera_name);
+    }
 	closeSession(onvif_session);
 	free(onvif_session);
 	free(onvif_data);

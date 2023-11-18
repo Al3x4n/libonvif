@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 9.0.0, 2022-12-20T22:00:06. -->
+<!-- Written by QtCreator 9.0.0, 2023-07-15T00:40:14. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -164,7 +164,7 @@
 -DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
 -DCMAKE_INCLUDE_PATH:STRING=C:\Users\HP\Downloads\ffmpeg-5.1.2-full_build-shared\include;C:\Users\HP\Documents\GitHub\CustomAudioVideo\lib\libxml2\include
 -DCMAKE_LIBRARY_PATH:STRING=C:\Users\HP\Downloads\ffmpeg-5.1.2-full_build-shared\lib;C:\Users\HP\Documents\GitHub\CustomAudioVideo\lib\libxml2\lib
--DBUILD_GUI=ON</value>
+-DBUILD_GUI:UNINITIALIZED=ON</value>
     <value type="int" key="EnableQmlDebugging">0</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\HP\Documents\GitHub\libonvif\..\build-libonvif-Desktop_Qt_5_15_2_MinGW_64_bit-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
